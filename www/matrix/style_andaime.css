@@ -1,0 +1,119 @@
+.create_andaime {
+    width: 100%;
+    background-color: #ffffff;
+    height: 850px;
+}   
+.create_andaime .andaime_ali h1 {
+    text-align: left;
+    color: #5b6574;
+    font-size: 20px;
+    padding: 10px 0 10px 20px;
+} 
+.create_andaime form {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.create_andaime form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+.create_andaime form input{
+    width: 100px;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    margin-right: 400px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.create_andaime form select{
+    width: 200px;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    margin-right: 300px;
+}
+.create_andaime form textarea{
+    width: 200px;
+    height: 100px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    margin-right: 300px; 
+}
+.create_andaime form input[type="submit"]{
+    width: 100px;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    margin: 0px 430px 100px 0px;
+}
+.create_andaime form input[type="button"]{
+    width: 100px;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    margin-left: -400px;
+}
+
+.andaime_ali{
+  float: left;
+  width: 50%;
+}
+.side_andaime{
+  display: flex;
+  width: 50%;
+  height: 620px;
+}
+
+.fake_form_andaime {
+    padding-top: 100px;
+    padding-left: 20px;
+
+}   
+.side_andaime .fake_form_andaime input{
+    width: 110px;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    margin-right: 400px;
+    padding: 0 15px;
+}
+.side_andaime .fake_form_andaime input[type="checkbox"]{
+    width: 100px;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    margin-right: 300px;
+    padding: 0 15px;
+}
+.side_andaime .fake_form_andaime label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 35px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+.side_andaime .fake_form_andaime select{
+    width: 200px;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    padding: 0 15px;
+    margin-right: 300px;
+}
+
+.contrato_andaime {
+    width: 100%;
+    background-color: #ffffff;
+}
+h3{
+    margin-top: : 5px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+
+
+}

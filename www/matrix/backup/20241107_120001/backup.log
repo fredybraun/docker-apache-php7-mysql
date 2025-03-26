@@ -1,0 +1,13 @@
+Inicio do backup 20241107_120001
+Iniciando backup do banco de dados [id12999633_apoc]
+mysqldump: Couldn't execute 'show create table `andaimes`': Table './id12999633_apoc/andaimes' is marked as crashed and should be repaired (145)
+ERRO ao realizar o Backup do Banco de dados [id12999633_apoc]
+Iniciando backup do banco de dados [information_schema]
+Backup Banco de dados [information_schema] completo
+Iniciando backup do banco de dados [mysql]
+Backup Banco de dados [mysql] completo
+Iniciando backup do banco de dados [performance_schema]
+Backup Banco de dados [performance_schema] completo
+Iniciando backup do banco de dados [phpmyadmin]
+Backup Banco de dados [phpmyadmin] completo
+Final do backup: 20241107_120004
