@@ -57,7 +57,7 @@
 		</style>
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		
+		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 		
 		
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -131,7 +131,7 @@
 			   prevText: 'Anterior',
 	    	});
 
-	    	//SEAECH DE CLIENTES
+	    	//SEARCH DE CLIENTES
 	    	$('.search-box input[type="text"]').on("keyup input", async function(){
 		        /* Get input value on change */
 		        var inputVal = $(this).val();

@@ -114,8 +114,8 @@ exit(); }
         <div class="col-sm">
             <form action="atualiza_andaime.php" method="post">
                 <div class="form-group">
-                    <label for="fos">Cliente</label>
-                    <select required class="form-control w-75" id="cli_andaime" name="cli_andaime">
+                    <label for="fos" class="row pl-3">Cliente</label>
+                    <select required class="row select2" id="cli_andaime" name="cli_andaime" style="width: 75%;">
                         <option value=""></option>
                     <?php
                         if ($stmt = $con->prepare('SELECT id_cli, nome_cli FROM clientes ORDER BY nome_cli ')) {
@@ -254,5 +254,11 @@ exit(); }
             </form> 
     </div>                        
  </div>
+ <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>	
+			<script>
+				$(document).ready(function() {
+   					 $('.select2').select2();
+				});
+			</script>	
     </body>
 </html>

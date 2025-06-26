@@ -33,7 +33,7 @@ if ($stmt = $con->prepare("SELECT agendamento_os FROM ordem_serv WHERE agendamen
       </div>
       <hr>
       <a class="dropdown-item mt-3" href="create_cli.php">Cadastro de Clientes</a>
-      
+      <a class="dropdown-item mt-3" href="create_obra.php">Cadastro de Obras</a>
     </div>
   </div>
   <div class="btn-group">

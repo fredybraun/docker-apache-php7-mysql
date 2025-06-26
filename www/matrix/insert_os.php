@@ -94,8 +94,8 @@ exit(); }
                 <div class="col-sm">
                     <form action="atualiza_os.php" method="post">
                         <div class="form-group">
-                            <label for="fos">Cliente</label>
-                            <select required class="form-control w-75" id="cli_os" name="cli_os">
+                            <label for="fos" class="row pl-3">Cliente</label>
+                            <select required class="row select2" id="cli_os" name="cli_os" style="width: 75%;">
                                 <option value=""></option>
                                 <?php
                                     if ($stmt = $con->prepare('SELECT clientes.id_cli, clientes.nome_cli, obra_clientes.nome_obra, obra_clientes.id_obra 
@@ -298,6 +298,12 @@ exit(); }
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>	
+			<script>
+				$(document).ready(function() {
+   					 $('.select2').select2();
+				});
+			</script>	
     </body>
 </html>
            

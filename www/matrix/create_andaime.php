@@ -113,8 +113,8 @@ die(); }
 		<div class="col-sm">
 			<form action="insert_andaime.php" method="post">
 				<div class="form-group">
-					<a href="create_cli.php"><label for="fos">Cliente</label></a>
-	    			<select required class="form-control w-75" id="cli_andaime" name="cli_andaime">
+					<a href="create_cli.php"><label for="fos" class="row pl-3">Cliente</label></a>
+	    			<select required class="row select2" id="cli_andaime" name="cli_andaime" style="width: 75%;">
 	    				<option value=""></option>
     				<?php
 						if ($stmt = $con->prepare('SELECT id_cli, nome_cli FROM clientes ORDER BY nome_cli ')) {
@@ -433,31 +433,35 @@ die(); }
 					</table>
 				</div>
 			</div>
+			<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>	
+			<script>
+				$(document).ready(function() {
+   					 $('.select2').select2();
+				});
+			</script>	
 
 			<script type="text/javascript">
-	  		
-		$(document).ready(function(){
-		    $('.search-box input[type="text"]').on("keyup input", function(){
-		        /* Get input value on change */
-		        var inputVal = $(this).val();
-		        var resultDropdown = $(this).siblings(".result");
-		        if(inputVal.length){
-		            $.get("backend-search.php", {term: inputVal}).done(function(data){
-		                // Display the returned data in browser
-		                resultDropdown.html(data);
-		            });
-		        } else{
-		            resultDropdown.empty();
-		        }
-		    });
-		    
-		    // Set search input value on click of result item
-		    $(document).on("click", ".result p", function(){
-		        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
-		        $(this).parent(".result").empty();
-		    });
-		});
-
+				$(document).ready(function(){
+					$('.search-box input[type="text"]').on("keyup input", function(){
+						/* Get input value on change */
+						var inputVal = $(this).val();
+						var resultDropdown = $(this).siblings(".result");
+						if(inputVal.length){
+							$.get("backend-search.php", {term: inputVal}).done(function(data){
+								// Display the returned data in browser
+								resultDropdown.html(data);
+							});
+						} else{
+							resultDropdown.empty();
+						}
+					});
+					
+					// Set search input value on click of result item
+					$(document).on("click", ".result p", function(){
+						$(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+						$(this).parent(".result").empty();
+					});
+				});
 		</script>
 		</body>
 </html>
