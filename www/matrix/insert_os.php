@@ -108,7 +108,7 @@ exit(); }
                                         if ($stmt->num_rows > 0) {
                                         $stmt->bind_result($id_cli, $nome_cli, $nome_obra, $id_obra);
                                             while ($stmt->fetch()) {
-                                                if ($id_cli == $id_cli_os) {
+                                                if ($id_cli == $id_cli_os && $id_obra == $id_obra_os) {
                                                     $selected = 'selected';
                                                 } else {
                                                     $selected = '';
