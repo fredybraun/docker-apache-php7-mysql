@@ -98,11 +98,7 @@ die(); }
 					        echo '<spam>'.$end_obra.'</spam>';
 					         echo '</td>';
 					        echo '<td>';
-					        if($_SESSION['nivel'] == 1){
-					        	echo '<spam class="badge badge-primary"><a class="text-white" href="insert_obra.php?editar='.$id_obra.'" c> Editar </a></spam>';
-					        	
-					        }
-					        
+					        echo '<spam class="badge badge-primary"><a class="text-white" href="insert_obra.php?editar='.$id_obra.'" c> Editar </a></spam>';
 					        echo '</td></tr>';
 					    }
 					}

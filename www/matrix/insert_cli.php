@@ -33,6 +33,7 @@
                 $stmt->execute();
                 $_SESSION['message'] = "Dados adicionados"; 
                 header('location: create_cli.php');
+				exit();
             }   
         }
 
@@ -57,6 +58,43 @@
 		$stmt = $con->prepare("DELETE FROM clientes WHERE id_cli='$id'");
 		$stmt->execute();
 		header('location: create_cli.php');
+		exit();
+	}
+?>
+<?php
+	if(isset($_POST['status'])){
+		//$status = $_POST[status];
+		$nome = '';
+		$cpf = '';
+        $tel1 = '';
+        $tel2 = '';
+        $endereco = '';
+        $numero = '';
+        $cidade = '';
+        $observacoes = '';
+        $contato = '';
+        $bairro = '';
+        $id = '';
+		if($status == 'update') {
+			if(isset($_POST['id'], $_POST['cli_nome'], $_POST['cli_tel'], $_POST['cli_end'], $_POST['cli_cid'])){
+				$id = $_POST['id'];
+				$nome = $_POST['cli_nome'];
+                $cpf = $_POST['cli_cpf'];
+                $tel1 = $_POST['cli_tel'];
+                $tel2 = $_POST['cli_tel2'];
+                $endereco = $_POST['cli_end'];
+                $numero = $_POST['cli_num'];
+                $cidade = $_POST['cli_cid'];
+                $observacoes = $_POST['cli_obs'];
+                $contato = $_POST['cli_contato'];
+        		$bairro	= $_POST['cli_bairro'];
+				$stmt = $con->prepare("UPDATE clientes SET nome_cli='$nome', cpf_cli='$cpf' ,end_cli='$endereco', num_cli='$numero', cid_cli='$cidade', tel_cli='$tel1', tel2_cli='$tel2', obs_cli='$observacoes', contato_cli='$contato', bairro_cli='$bairro' WHERE id_cli='$id'");
+				$stmt->execute();
+				$_SESSION['message'] = "Dados atualizados"; 
+				header('location: ./create_cli.php');
+				exit();
+			}	
+		}
 	}
 ?>
 <?php
@@ -134,38 +172,3 @@
 	</div>	
 	</body>
 </html>	
-<?php
-	if(isset($_POST['status'])){
-		//$status = $_POST[status];
-		$nome = '';
-		$cpf = '';
-        $tel1 = '';
-        $tel2 = '';
-        $endereco = '';
-        $numero = '';
-        $cidade = '';
-        $observacoes = '';
-        $contato = '';
-        $bairro = '';
-        $id = '';
-		if($status == 'update') {
-			if(isset($_POST['id'], $_POST['cli_nome'], $_POST['cli_tel'], $_POST['cli_end'], $_POST['cli_cid'])){
-				$id = $_POST['id'];
-				$nome = $_POST['cli_nome'];
-                $cpf = $_POST['cli_cpf'];
-                $tel1 = $_POST['cli_tel'];
-                $tel2 = $_POST['cli_tel2'];
-                $endereco = $_POST['cli_end'];
-                $numero = $_POST['cli_num'];
-                $cidade = $_POST['cli_cid'];
-                $observacoes = $_POST['cli_obs'];
-                $contato = $_POST['cli_contato'];
-        		$bairro	= $_POST['cli_bairro'];
-				$stmt = $con->prepare("UPDATE clientes SET nome_cli='$nome', cpf_cli='$cpf' ,end_cli='$endereco', num_cli='$numero', cid_cli='$cidade', tel_cli='$tel1', tel2_cli='$tel2', obs_cli='$observacoes', contato_cli='$contato', bairro_cli='$bairro' WHERE id_cli='$id'");
-				$stmt->execute();
-				$_SESSION['message'] = "Dados atualizados"; 
-				header('location: ./create_cli.php');
-			}	
-		}
-	}
-?>

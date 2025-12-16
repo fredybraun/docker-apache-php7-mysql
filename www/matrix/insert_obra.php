@@ -45,6 +45,32 @@
 	// }
 ?>
 <?php
+	if(isset($_POST['status'])){
+		//$status = $_POST[status];
+		$nome = '';
+		$cliente = '';
+        $endereco = '';
+        $id = '';
+		if($status == 'update') {
+			if(isset($_POST['id'], $_POST['nome_obra'], $_POST['cli_obra'], $_POST['end_obra'])){
+				$id = $_POST['id'];
+				$nome = $_POST['nome_obra'];
+                $cliente = $_POST['cli_obra'];
+                $endereco = $_POST['end_obra'];
+				$stmt = $con->prepare("UPDATE obra_clientes SET 
+                    nome_obra='$nome', 
+                    endereco_obra = '$endereco',
+                    id_cli = '$cliente'
+                     WHERE id_obra='$id'");
+				$stmt->execute();
+				$_SESSION['message'] = "Dados atualizados"; 
+				header('location: create_obra.php');
+				exit();
+			}	
+		}
+	}
+?>
+<?php
 	$_SESSION['active'] = 'cliente';
 	require ('./topo2.php');
 	require('menu2.php');
@@ -111,28 +137,3 @@
 			</div>
 	</body>
 </html>	
-<?php
-	if(isset($_POST['status'])){
-		//$status = $_POST[status];
-		$nome = '';
-		$cliente = '';
-        $endereco = '';
-        $id = '';
-		if($status == 'update') {
-			if(isset($_POST['id'], $_POST['nome_obra'], $_POST['cli_obra'], $_POST['end_obra'])){
-				$id = $_POST['id'];
-				$nome = $_POST['nome_obra'];
-                $cliente = $_POST['cli_obra'];
-                $endereco = $_POST['end_obra'];
-				$stmt = $con->prepare("UPDATE obra_clientes SET 
-                    nome_obra='$nome', 
-                    endereco_obra = '$endereco',
-                    id_cli = '$cliente'
-                     WHERE id_obra='$id'");
-				$stmt->execute();
-				$_SESSION['message'] = "Dados atualizados"; 
-				header('location: create_obra.php');
-			}	
-		}
-	}
-?>
