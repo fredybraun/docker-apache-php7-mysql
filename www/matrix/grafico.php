@@ -15,7 +15,7 @@
  $grafico->SetFileFormat("png");
   
  // Definindo o título do gráfico
- $grafico->SetTitle("OS abertas 2021 a 2025");
+ $grafico->SetTitle("OS abertas 2021 a 2026");
   
  // Tipo do gráfico
  // Por ser: lines, bars, boxes, bubbles, candelesticks, candelesticks2, linepoints, ohlc, pie, points, squared, stackedarea, stackedbars, thinbarline
@@ -28,10 +28,15 @@
  $grafico->SetXTitle("Meses");
 
  # Make a legend for the 3 data sets plotted:
-$grafico->SetLegend(array('2021', '2022', '2023', '2024', '2025'));
+$grafico->SetLegend(array('2021', '2022', '2023', '2024', '2025', '2026'));
+
+ // Definindo o tipo de imagem de borda
 $grafico->SetImageBorderType('plain');
+
+$grafico->SetDataColors(array('cyan', 'yellow', 'orange', 'blue', 'orchid', 'green'));
   
  // dados do gráfico
+$ano_2026 = 2026;
 $ano_2025 = 2025;
 $ano_2024 = 2024;
 $ano_2023 = 2023;
@@ -42,6 +47,15 @@ $ano_2021 = 2021;
 $dados = array();
 
 for ($i = 1; $i <= 12; $i++) {
+	$stmt = $con->prepare("SELECT COUNT(id_os) FROM ordem_serv WHERE YEAR(`data_os`)='$ano_2026' AND MONTH(`data_os`) ='$i' AND id_status BETWEEN 1 AND 5");
+	$stmt->execute();
+	$stmt->store_result();
+	$num_of_rows = $stmt->num_rows;
+	if ($stmt->num_rows > 0) {
+		$stmt->bind_result($total_mes_ano_2026);
+		$stmt->fetch();
+	}
+
 	$stmt = $con->prepare("SELECT COUNT(id_os) FROM ordem_serv WHERE YEAR(`data_os`)='$ano_2025' AND MONTH(`data_os`) ='$i' AND id_status BETWEEN 1 AND 5");
 	$stmt->execute();
 	$stmt->store_result();
@@ -86,7 +100,7 @@ for ($i = 1; $i <= 12; $i++) {
         $stmt->bind_result($total_mes_ano_2021);
         $stmt->fetch();
     }
-    $dados[$i -1] = array( $i, $total_mes_ano_2021, $total_mes_ano_2022, $total_mes_ano_2023, $total_mes_ano_2024, $total_mes_ano_2025 );	
+    $dados[$i -1] = array( $i, $total_mes_ano_2021, $total_mes_ano_2022, $total_mes_ano_2023, $total_mes_ano_2024, $total_mes_ano_2025, $total_mes_ano_2026 );	
 }
 
 

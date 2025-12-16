@@ -7,11 +7,11 @@ session_start();
 # The data labels aren't used directly by PHPlot. They are here for our
 # reference, and we copy them to the legend below.
 $data = array();
-$ano_2025 = 2025;
+$ano_vigente = 2026;
 
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 1 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 1 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -23,7 +23,7 @@ for ($i = 1; $i <= 1; $i++) {
 }
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 2 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 2 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -35,7 +35,7 @@ for ($i = 1; $i <= 1; $i++) {
 }
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 3 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 3 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -47,7 +47,7 @@ for ($i = 1; $i <= 1; $i++) {
 }
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 4 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 4 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -59,7 +59,7 @@ for ($i = 1; $i <= 1; $i++) {
 }
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 5 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 5 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -71,7 +71,7 @@ for ($i = 1; $i <= 1; $i++) {
 }
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 6 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 6 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -83,7 +83,7 @@ for ($i = 1; $i <= 1; $i++) {
 }
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 8 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 8 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -95,7 +95,7 @@ for ($i = 1; $i <= 1; $i++) {
 }
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 10 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 10 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -107,7 +107,7 @@ for ($i = 1; $i <= 1; $i++) {
 }
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 9 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 9 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -119,7 +119,7 @@ for ($i = 1; $i <= 1; $i++) {
 }
 for ($i = 1; $i <= 1; $i++) {
   $stmt = $con->prepare("SELECT DISTINCT COUNT(id_serv) FROM ordem_serv 
-  WHERE id_serv = 11 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_2025'");
+  WHERE id_serv = 11 AND id_status BETWEEN 1 AND 5 AND YEAR(`data_os`)= '$ano_vigente'");
   $stmt->execute();
   $stmt->store_result();
   $num_of_rows = $stmt->num_rows;
@@ -144,7 +144,7 @@ $plot->SetDataColors(array('red', 'green', 'blue', 'yellow', 'cyan',
                         'gray', 'orange'));
 
 # Main plot title:
-$plot->SetTitle("Trabalhos Executados 2025");
+$plot->SetTitle("Trabalhos Executados 2026");
 
 # Build a legend from our data array.
 # Each call to SetLegend makes one line as "label: value".
