@@ -83,7 +83,7 @@ if (isset($_GET['id_os'])) {
 								<strong>Observações: </strong><?php echo $obs_cli;?><br>
 								<?php
 									if (isset($nome_obra) && isset($end_obra)) {
-										echo '<br><strong>OBRA: </strong>' . $nome_obra . '<br>';
+										echo '<br><a href="dados_obra.php?id_obra='.$id_obra_os.'"><strong>OBRA: ' . $nome_obra . '</strong></a><br>';
 										echo '<strong>Endereço: </strong>' . $end_obra . '<br>';
 									}
 								?>

@@ -201,7 +201,7 @@ die(); }
 			
 
 <div class="container-fluid mt-2 col-md-12">
-	<h3 class = "text-white">Ordem de serviços abertas</h3>
+	<h3 class = "text-black">Ordem de serviços abertas</h3>
 					 <table class="table table-md">
 					 	<thead>
 						    <tr >

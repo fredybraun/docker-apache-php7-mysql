@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Change this to your connection info.
-$DATABASE_HOST = '172.18.0.2:3306';
+$DATABASE_HOST = '172.18.0.3:3306';
 	$DATABASE_USER = 'root';
 	$DATABASE_PASS = 'password';
 	$DATABASE_NAME = 'id12999633_apoc';

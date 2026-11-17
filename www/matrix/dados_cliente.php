@@ -103,7 +103,8 @@ if (isset($_GET['id_cliente'])) {
 									}
 								}
 								
-								echo '<h5>' . ($obra_atual === 'sem obra' ? 'Sem Obra' : 'Obra: ' . $nome_obra) . '</h5>';
+								echo '<a href="dados_obra.php?id_obra='.$obra_atual.'"><h5>' . ($obra_atual === 'sem obra' ? 'Sem Obra' : 'Obra: ' . $nome_obra) . '</h5></a>';
+								echo '<a href="relatorio_obra.php?id_cli='.$id_cli.'&id_obra='.$obra_atual.'" target="_blank"><button type="button"class="btn btn-primary">Relatório de itens</button></a>';
 								echo '<table class="table table-sm table-hover">';
 								echo '<thead><tr>';
 								echo '<th scope="col">OS</th>';

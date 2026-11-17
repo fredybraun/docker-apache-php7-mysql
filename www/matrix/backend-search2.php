@@ -2,7 +2,7 @@
 /*BUSCA OS*/
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("172.18.0.2", "root", "password", "id12999633_apoc", "3306");
+$link = mysqli_connect("172.18.0.3", "root", "password", "id12999633_apoc", "3306");
 // Check connection
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());

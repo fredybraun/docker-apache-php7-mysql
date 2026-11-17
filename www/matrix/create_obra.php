@@ -57,6 +57,10 @@ die(); }
 							   		<label for="fobs">Endereço</label>
 				    				<textarea class="form-control w-75" id="end_obra" name="end_obra" placeholder="Endereço..."></textarea>
 				    			</div>
+								<div class="form-group">
+							   		<label for="fobs">Informações</label>
+				    				<textarea class="form-control w-75" id="info_obra" name="info_obra" placeholder="Informações..."></textarea>
+				    			</div>
 								<input type="hidden" name="status" id="status" value="create">
 				    			<div class="mt-2">
 				    				<button type="submit" class="btn btn-primary">Adicionar</button>

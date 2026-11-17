@@ -9,12 +9,14 @@
 		$nome = '';
 		$cliente = '';
         $endereco = '';
+		$info = '';
         if($status == 'create') {
-            if(isset($_POST['nome_obra'], $_POST['cli_obra'], $_POST['end_obra'])){
+            if(isset($_POST['nome_obra'], $_POST['cli_obra'], $_POST['end_obra'], $_POST['info_obra'])){
                 $nome = $_POST['nome_obra'];
                 $cliente = $_POST['cli_obra'];
                 $endereco = $_POST['end_obra'];
-                $stmt = $con->prepare("INSERT INTO obra_clientes (nome_obra, endereco_obra, id_cli) VALUES ('$nome', '$endereco', '$cliente')");
+				$info = $_POST['info_obra'];
+                $stmt = $con->prepare("INSERT INTO obra_clientes (nome_obra, endereco_obra, id_cli, info_obra) VALUES ('$nome', '$endereco', '$cliente', '$info')");
                 $stmt->execute();
                 $_SESSION['message'] = "Dados adicionados"; 
                 header('location: create_obra.php');
@@ -31,7 +33,7 @@
 		$stmt->store_result();
 		$num_of_rows = $stmt->num_rows;
 		if ($stmt->num_rows > 0) {
-			$stmt->bind_result($id_obra, $nome_obra, $endereco_obra, $id_cliente);
+			$stmt->bind_result($id_obra, $nome_obra, $endereco_obra, $id_cliente, $info_obra);
 			$stmt->fetch();
 		}
 	}
@@ -51,16 +53,19 @@
 		$cliente = '';
         $endereco = '';
         $id = '';
+		$info = '';
 		if($status == 'update') {
-			if(isset($_POST['id'], $_POST['nome_obra'], $_POST['cli_obra'], $_POST['end_obra'])){
+			if(isset($_POST['id'], $_POST['nome_obra'], $_POST['cli_obra'], $_POST['end_obra'], $_POST['info_obra'])){
 				$id = $_POST['id'];
 				$nome = $_POST['nome_obra'];
                 $cliente = $_POST['cli_obra'];
                 $endereco = $_POST['end_obra'];
+				$info = $_POST['info_obra'];
 				$stmt = $con->prepare("UPDATE obra_clientes SET 
                     nome_obra='$nome', 
                     endereco_obra = '$endereco',
-                    id_cli = '$cliente'
+                    id_cli = '$cliente',
+                    info_obra = '$info'
                      WHERE id_obra='$id'");
 				$stmt->execute();
 				$_SESSION['message'] = "Dados atualizados"; 
@@ -87,7 +92,7 @@
 			    </div>
 				</div>	
 				<div id="fecha">
-					<h3>Cadastro de obra</h3>
+					<h3>Editar de obra</h3>
 					<div class="row">
 						<div class="col-sm">	
 							<form action="insert_obra.php" method="post">
@@ -123,6 +128,10 @@
 								<div class="form-group">
 							   		<label for="fobs">Endereço</label>
                                        <input required class="form-control w-75" type="text" id="end_obra" name="end_obra" placeholder="Endereço..." value="<?php echo $endereco_obra; ?>">
+				    			</div>
+								<div class="form-group">
+							   		<label for="fobs">Informações</label>
+				    				<textarea class="form-control w-75" rows="10" id="info_obra" name="info_obra" placeholder="Informações..."><?php echo $info_obra; ?></textarea>
 				    			</div>
 								<input type="hidden" name="status" id="status" value="update">
                                 <input type="hidden" name="id" id="id" value="<?php echo $id;?>">
